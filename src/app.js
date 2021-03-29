@@ -1,6 +1,7 @@
 const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
+const { get } = require('http')
 
 const app = express()
 
@@ -47,6 +48,22 @@ app.get('/weather', (req, res) => {
     res.send({
         forecast: "50 degrees",
         location: "Philadelphia"
+    })
+})
+
+app.get('/help/*', (req, res) => {
+    res.render('404', {
+        title: '404',
+        name: 'Maleeha Bhuiyan',
+        errorMessage: 'Help Article Note Found'
+    })
+})
+
+app.get('*', (req, res) => {
+    res.render('404', {
+        title: '404',
+        name: 'Maleeha Bhuiyan',
+        errorMessage: 'Page not Found'
     })
 })
 
