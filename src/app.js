@@ -1,16 +1,22 @@
 const path = require('path')
 const express = require('express')
+const hbs = require('hbs')
 
 const app = express()
+
+// Define paths for express config
 const publicDirectoryPath = path.join(__dirname, '../public')
-const aboutDirectoryPath = path.join(__dirname, '../public/about')
-const helpDirectoryPath = path.join(__dirname, '../public/help')
+const viewsPath = path.join(__dirname, '../templates/views')
+const partialsPath = path.join(__dirname, '../templates/partials')
 
-
+// Setup Handle Bars engine and views location 
 app.set('view engine','hbs')
+app.set('views', viewsPath)
+hbs.registerPartials(partialsPath)
+
+// Setup Static directory to serve 
 app.use(express.static(publicDirectoryPath))
-// app.use(express.static(aboutDirectoryPath))
-// app.use(express.static(helpDirectoryPath))
+
 
 app.get('', (req, res) => {
     res.render('index', {
@@ -28,8 +34,8 @@ app.get('/about', (req, res) => {
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        title: 'Help Page',
-        message: "Help Message"
+        title: 'Help',
+        name: "Maleeha Bhuiyan"
     })
 })
 
