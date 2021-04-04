@@ -12,6 +12,8 @@
   "dependencies": {
     "express": "^4.16.4",
     "hbs": "^4.1.1",
-    "materialize-css": "^1.0.0-rc.2"
+    "materialize-css": "^1.0.0-rc.2",
+    "postman-request": "^2.88.1-postman.29",
+    "request": "^2.88.0"
   }
 }
