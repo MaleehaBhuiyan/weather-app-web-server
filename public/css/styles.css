@@ -19,3 +19,19 @@ h1 {
     bottom: 0;
     width: 100%;
   }
+
+.main-body {
+    position: relative;
+    left: 100px;
+    width: 250px;
+}
+
+#messageOne {
+    position: relative;
+    left: 100px; 
+}
+
+#messageTwo {
+    position: relative;
+    left: 100px; 
+}
